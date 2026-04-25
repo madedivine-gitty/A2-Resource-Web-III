@@ -1,0 +1,307 @@
+body{
+    background-color: #486F5B; 
+    margin: 0; 
+    height: 100vh; 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hidden{
+    display:none;
+}
+
+/* Fonts*/
+.fjalla-one-regular {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.fira-mono-regular {
+  font-family: "Fira Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.fira-mono-medium {
+  font-family: "Fira Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+.fira-mono-bold {
+  font-family: "Fira Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* all buttons*/
+    button {
+        font-family: Fjalla One, sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: .75px;
+        line-height: 1rem;
+        text-align: left;
+        color: #EDE8DE;
+        text-decoration:none;
+        background-color: transparent;
+        border:none;
+        cursor:pointer;
+        
+        display:block;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        width:60%;
+    }
+
+    .button.active {
+        color: #FCF8EA;
+        background-color: #F8C45C;
+    }
+
+/* overall navBar  */
+    .navBAR {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 30%;
+        /* min-width: 345px; */
+        box-sizing: border-box;
+        background-color: #486F5B;
+        padding-left: 2%;
+        padding-top: 2%;
+        padding-right: 4%;
+        padding-bottom: 2%;
+        overflow-y: auto;
+        justify-content: space-between;
+        flex-direction:column;
+    }
+
+    #sidebarButton{
+       display:none;    
+    }
+
+/* FILTERS  */
+/* filter typography */
+    h2 {
+        font-family: Fjalla One, sans-serif;
+        font-size: 17px;
+        letter-spacing: .75px;
+        width: 100%;
+    }
+
+    .infoRight{
+        text-align:right;
+        position: absolute;
+        right: 18%;
+        margin-top: 0px;
+    }
+
+    .infoRightPlus{
+        display: none;
+        font-size: 1.4rem;
+        text-align:right;
+        position: absolute;
+        right: 18%;
+        margin-top: 0px;
+    }
+
+
+/* collapsible formatting */
+    .filterInformation{
+        max-height: 0;
+        overflow-y: auto;
+        margin-bottom: 0px;
+        transition: max-height 0.3s ease-in-out;
+        padding-left: 35px;
+    }
+
+    .filterInformation.open {
+        max-height: 30vh;
+    }
+    
+    .collapsible{
+        font-family: Fjalla One, sans-serif;
+        font-size: 17px;
+        letter-spacing: .75px;
+        line-height: 1.4rem;
+        hyphens: auto;
+        color:#486F5B;
+        
+        background-color: #EDE8DE;
+        padding-top: 10px;
+        padding-left: 9%;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .collapsible:hover {
+        background-color: #486F5B;
+        color: #EDE8DE;
+        border: #EDE8DE 2px solid;
+    }
+    .collapsible:hover span {
+        background-color: #486F5B;
+        color: #EDE8DE;
+    }
+    
+    .collapsible:active span {
+        background-color: #F8C45C;
+        color: #EDE8DE;
+    }
+    
+    .collapsible:active{
+        background-color: #F8C45C;
+        color: #EDE8DE;
+    }
+    .button:active{
+        background-color: #F8C45C;
+        color: #EDE8DE;
+    }
+
+/* Interactive Map */
+    .world-map {
+        position: absolute;
+        top: 0;
+        left: calc(30% + 2%);
+        padding: 10px;
+        width: 70vw;
+        height: 100vh;
+        background-color: #a7beb3;
+        overflow: auto;
+        background-image: radial-gradient(circle, #486F5B 0.3px,transparent 1px); /* Dot Grid*/
+        background-size: 35px 35px;
+        background-attachment: local;
+    }
+    .map-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    svg {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        position: relative;
+        transform-origin: center center;
+    }
+
+    path {
+        fill: #fffff39a;
+        stroke: #FCF8EA;
+        stroke-width: 0.5;
+        transition: 100ms;
+    }
+
+   path.highlighted {
+        fill: #F8C45C;
+        stroke: none;
+    }
+
+/* OVERALL LIST */
+    .overallList {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        position: relative;
+    }
+
+    .list{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 30%);
+        justify-content: space-between;
+        row-gap: 0.5rem;
+        column-gap: 0.5rem;
+    }
+
+/* LIST LAYOUT*/
+    h3{
+        font-family: Fjalla One, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 0.85rem;
+        letter-spacing: 0.05rem;
+        line-height: 1rem;
+        margin-top: 10px;
+        hyphens: auto;
+        overflow-wrap: break-word;
+        text-align: left;
+        color: #EDE8DE;
+    }
+
+/* individual design containers  */
+    .filterDiv {
+        border: 0px solid white;
+        display: none;
+    }
+    .filterDiv.visible {
+        display: block;
+    }
+
+/* design images  */
+    #designCover{
+        width: 100%;
+        background-color: #EDE8DE;
+    }
+
+/* Pop-up Information */
+    h4{
+        font-family: Fjalla One, sans-serif;
+        color: #322E2E;
+        font-size: 1.9rem;
+        font-weight: 500;
+        margin-top: 2.5rem;
+    }
+    h5{
+        font-family: Fira-mono-medium, monospace;
+        color: #486F5B;
+        font-size: 0.75rem;
+        margin-top: -1.5rem;
+    }
+    p{
+        font-family: "FiraMono-Regular", monospace;
+        color: #322E2E;
+        font-size: 0.625rem;
+        margin-top: 1.5rem;
+    }
+    .closeBtn{
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url("./closeIcon.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        position: absolute;
+        top: 3%;
+        right: 5%;
+    }
+    .closeBtn:hover{
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url("./closeHover.png");
+        background-size: cover;
+        background-position: center;
+        transition: 0.3s;
+    }
+
+    .hide{
+        background-color: #FCF8EA;
+        border: #F8C45C 5px solid;
+        text-align: left;
+        position: fixed;
+        margin: 0 auto;
+        z-index: 8;
+        top: 10%;
+        right: 3%;
+        width: 20%;
+        height: auto;
+        padding: 0 3% 3% 2%;
+        display: none;
+    }
+
+    #infoImage{
+        display: block;
+        width: 50%;
+        margin-top: 1.5rem;
+    }
